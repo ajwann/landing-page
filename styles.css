@@ -36,7 +36,11 @@ p {
     margin-bottom: 20px;
 }
 
-.link {
+.link-group {
+    margin-bottom: 15px;
+}
+
+.link-button {
     display: block;
     background-color: #f0f0f0;
     color: #333;
@@ -45,10 +49,34 @@ p {
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
+    cursor: pointer;
 }
 
-.link:hover {
+.link-button:hover {
     background-color: #e0e0e0;
+}
+
+.link-list {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-list.active {
+    display: block;
+}
+
+.link-item {
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.link-item a {
+    color: #333;
+    text-decoration: none;
 }
 
 .material-icons {

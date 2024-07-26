@@ -3,26 +3,23 @@ const linkGroups = [
         name: "Social Media",
         icon: "share",
         links: [
-            { name: "Twitter", url: "https://twitter.com/yourusername", icon: "chat" },
-            { name: "Instagram", url: "https://instagram.com/yourusername", icon: "camera_alt" },
-            { name: "Facebook", url: "https://facebook.com/yourusername", icon: "thumb_up" }
+            { name: "LinkedIn", url: "https://www.linkedin.com/in/adamwanninger", icon: "business" },
+            { name: "GitHub", url: "https://www.github.com/ajwann", icon: "code" }
         ]
     },
     {
-        name: "Professional",
+        name: "Speaking",
         icon: "work",
         links: [
-            { name: "LinkedIn", url: "https://linkedin.com/in/yourusername", icon: "business" },
-            { name: "GitHub", url: "https://github.com/yourusername", icon: "code" },
-            { name: "Portfolio", url: "https://yourportfolio.com", icon: "web" }
+            { name: "Product Coffee", url: "https://podcasts.apple.com/us/podcast/product-coffee/id1466136912?i=1000587734194", icon: "business" },
+            { name: "OLF '21", url: "https://youtu.be/o5FHxT2E9Qo", icon: "code" }
         ]
     },
     {
         name: "Contact",
         icon: "contact_mail",
         links: [
-            { name: "Email", url: "mailto:your.email@example.com", icon: "email" },
-            { name: "Phone", url: "tel:+1234567890", icon: "phone" }
+            { name: "Email", url: "mailto:adam@awanninger.com", icon: "email" }
         ]
     }
 ];

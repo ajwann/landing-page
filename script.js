@@ -1,6 +1,6 @@
 const linkGroups = [
     {
-        name: "Social Media",
+        name: "Socials",
         icon: "share",
         links: [
             { name: "LinkedIn", url: "https://www.linkedin.com/in/adamwanninger", icon: "business" },
@@ -9,10 +9,25 @@ const linkGroups = [
     },
     {
         name: "Speaking",
-        icon: "work",
+        icon: "record_voice_over",
         links: [
-            { name: "Product Coffee", url: "https://podcasts.apple.com/us/podcast/product-coffee/id1466136912?i=1000587734194", icon: "business" },
-            { name: "OLF '21", url: "https://youtu.be/o5FHxT2E9Qo", icon: "code" }
+            { name: "Product Coffee", url: "https://podcasts.apple.com/us/podcast/product-coffee/id1466136912?i=1000587734194", icon:"campaign" },
+            { name: "OLF '21", url: "https://youtu.be/o5FHxT2E9Qo", icon: "campaign" }
+        ]
+    },
+    {
+        name: "Writing",
+        icon: "edit_note",
+        links: [
+            { name: "Feature Flags for Product Managers: Give Yourself Options for Handling Risk", url: "https://hackernoon.com/feature-flags-for-product-managers-give-yourself-options-for-handling-risk", icon: "notes" },
+            { name: "What's The Most Important Skill for a Senior Developer?", url: "https://hackernoon.com/most-important-skill-for-a-senior-developer-1d2d3zyg", icon: "notes" }
+        ]
+    },
+    {
+        name: "Reading",
+        icon: "menu_book",
+        links: [
+            { name: "Gooodreads", url: "https://www.goodreads.com/review/list/171198075-adam?shelf=read", icon: "book" }
         ]
     },
     {

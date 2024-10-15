@@ -28,10 +28,10 @@ const linkGroups = [
         icon: "menu_book",
         links: [
             { name: "INSPIRED", url: "https://books.apple.com/us/book/inspired/id1400567600", icon: "book" },
-            { name: "Escaping the Build Trap", url: "https://books.apple.com/us/audiobook/escaping-the-build-trap-how-effective-product/id1642646989", icon: "book" },
-            { name: "TRANSFORMED", url: "https://books.apple.com/us/audiobook/transformed-moving-to-the-product-operating-model/id1710321644", icon: "book" },
-            { name: "EMPOWERED", url: "https://books.apple.com/us/audiobook/empowered-ordinary-people-extraordinary-products/id1648996249", icon: "book" },
-            { name: "Measure What Matters", url: "https://books.apple.com/us/audiobook/measure-what-matters-how-google-bono-and-the/id1416417939", icon: "book" }
+            { name: "Escaping the Build Trap", url: "https://books.apple.com/us/book/escaping-the-build-trap/id1454314915", icon: "book" },
+            { name: "TRANSFORMED", url: "https://books.apple.com/us/book/transformed/id6479089183", icon: "book" },
+            { name: "EMPOWERED", url: "https://books.apple.com/us/book/empowered/id1543476990", icon: "book" },
+            { name: "Measure What Matters", url: "https://books.apple.com/us/book/measure-what-matters/id1326615260", icon: "book" }
         ]
     },
     {

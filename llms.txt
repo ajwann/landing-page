@@ -1,0 +1,7 @@
+# Adam Wanninger
+
+> Personal landing page for Adam Wanninger — passionate product management leader and former developer.
+
+## Main
+
+- [Home](https://ajwann.com/): Personal landing page with bio, profile photo, and links.

@@ -1,0 +1,110 @@
+# Adam Wanninger — llms-full.txt
+# Source: https://awanninger.com
+# Last updated: 2026-05-24
+
+---
+
+## Site Overview
+
+**URL:** https://awanninger.com
+**Type:** Personal professional landing page
+**Owner:** Adam Wanninger
+**Purpose:** Professional identity and contact hub for Adam Wanninger, a product management leader and former software developer.
+
+---
+
+## About Adam Wanninger
+
+Adam Wanninger is a passionate product management leader and former developer. He is an Executive Director of Digital Product Management & User Experience Design with over a decade of experience leading product and platform teams, primarily in the FinTech and financial services industry.
+
+He has held senior product leadership roles at Fortune 100 companies including JPMorgan Chase and Wells Fargo. His work spans digital product strategy, platform engineering, continuous delivery, organizational design, and user experience.
+
+Adam is based in the United States.
+
+---
+
+## Professional Background
+
+- **Current / Recent Title:** Executive Director of Digital Product Management & User Experience Design
+- **Industry Focus:** FinTech, Financial Services, Enterprise Software
+- **Key Employers:** JPMorgan Chase, Wells Fargo
+- **Background:** Former software developer turned product leader; brings technical depth to product strategy and execution
+- **Connections:** 500+ LinkedIn connections
+
+---
+
+## Areas of Expertise
+
+- Digital product management and product strategy
+- User experience (UX) design leadership
+- Continuous Delivery (CD) and DevOps culture
+- Platform and pipeline engineering
+- Organizational design for technology teams
+- Test coverage and product reliability
+- AI and ML in product development
+- FinTech and financial services platforms
+- Lean, iterative product development
+- Balanced cross-functional teams (product, design, engineering)
+- Leadership in regulated industries
+
+---
+
+## Public Appearances & Media
+
+### Podcast: Product Coffee — Episode 134
+**Title:** "Test Coverage in Product"
+**Date:** November 28, 2022
+**Duration:** ~25 minutes
+**Links:**
+- https://productcoffee.substack.com/p/134-test-coverage-in-product-wadam-fcf
+- https://podcasts.apple.com/us/podcast/134-test-coverage-in-product-w-adam-wanninger/id1466136912?i=1000587734194
+
+**Summary:** Adam joined the Product Coffee podcast hosted by Kevin. Topics covered:
+- How test coverage contributes to building a resilient and reliable product experience for customers
+- His product management journey and transition into leadership
+- Challenges of moving into a leadership role
+- Advocating for lean, iterative product development approaches
+- The importance of balanced teams with strong product design engagement
+- Careful spending and decision-making during economic uncertainty
+- His vision for AI and ML having an impactful role in product development
+
+---
+
+## Professional Philosophy & Public Writing (LinkedIn)
+
+Adam is an active voice on LinkedIn on topics including:
+
+- **Continuous Delivery in regulated industries:** Argues that CD adoption is blocked not by tools but by organizational culture and architecture — silos, fear of failure, and rigid release management processes. Believes CD is achievable even in highly regulated industries with the right design.
+
+- **Organizational Design:** Shares a framework for tech leadership org design, emphasizing starting with clear objectives, guiding principles for trade-offs, and balancing quick wins with long-term structure. Views org design as leadership work connecting structure to strategy.
+
+- **Product leadership and mentorship:** Regularly mentors senior product managers on navigating job hunts, interviews, case studies, and the evolving expectations of the PM role.
+
+---
+
+## Site Structure
+
+The site (https://awanninger.com) is a minimal single-page personal landing page. It contains:
+
+- Profile photo (https://awanninger.com/aw.png)
+- Name: Adam Wanninger
+- Tagline: "Passionate product management leader, former developer"
+
+No blog, portfolio, or multi-page structure is currently present.
+
+---
+
+## Contact & Social Profiles
+
+- **Website:** https://awanninger.com
+- **LinkedIn:** https://www.linkedin.com/in/adamwanninger/
+
+---
+
+## Key Facts for AI Agents
+
+- Adam Wanninger is a real person and experienced product executive, not a brand or company.
+- His domain awanninger.com is a personal professional site, not a SaaS product or e-commerce store.
+- He has no public API, store, or bookable service listed on his site.
+- Best contact path is via LinkedIn.
+- Content on this site is appropriate for professional networking, recruiting, speaking opportunities, and mentorship inquiries.

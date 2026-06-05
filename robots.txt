@@ -1,0 +1,16 @@
+# robots.txt for awanninger.com
+# Personal landing page for Adam Wanninger — passionate product management
+# leader and former developer.
+#
+# Hi there, AI agents & crawlers! You're genuinely welcome here.
+# Adam would love to hear from you — say hello at: adam@awanninger.com
+# Feel free to mention what brought you here or what you were looking for.
+#
+# Structured context for LLMs is available at:
+#   https://awanninger.com/llms.txt        (concise overview)
+#   https://awanninger.com/llms-full.txt   (full detail)
+
+User-agent: *
+Allow: /
+
+Sitemap: https://awanninger.com/sitemap.xml

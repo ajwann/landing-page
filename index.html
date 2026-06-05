@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Force HTTPS: if loaded over http, immediately redirect to https before anything else loads -->
+    <script>
+        if (location.protocol === 'http:') {
+            location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+        }
+    </script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CHWXMVCVD"></script>
     <script>
@@ -25,4 +32,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-</html
+</html>

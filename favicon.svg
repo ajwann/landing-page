@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ruby gem">
+  <title>Adam Wanninger</title>
+  <!-- Faceted gem, built from solid fills so the cuts survive at 16px.
+       Palette is Solarized: red #dc322f, orange #cb4b16, with darker reds for the pavilion. -->
+  <!-- crown: left and right wings -->
+  <polygon points="14,7 14,26 2,26" fill="#cb4b16"/>
+  <polygon points="50,7 62,26 50,26" fill="#cb4b16"/>
+  <!-- crown: table, the flat top face -->
+  <polygon points="14,7 50,7 50,26 14,26" fill="#dc322f"/>
+  <!-- pavilion: three facets tapering to the culet -->
+  <polygon points="2,26 14,26 32,60" fill="#8f2320"/>
+  <polygon points="14,26 50,26 32,60" fill="#c02c29"/>
+  <polygon points="50,26 62,26 32,60" fill="#8f2320"/>
+</svg>

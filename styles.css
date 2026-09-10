@@ -1,22 +1,3 @@
-:root {
-    --base03:  #002b36;
-    --base02:  #073642;
-    --base01:  #586e75;
-    --base00:  #657b83;
-    --base0:   #839496;
-    --base1:   #93a1a1;
-    --base2:   #eee8d5;
-    --base3:   #fdf6e3;
-    --yellow:  #b58900;
-    --orange:  #cb4b16;
-    --red:     #dc322f;
-    --magenta: #d33682;
-    --violet:  #6c71c4;
-    --blue:    #268bd2;
-    --cyan:    #2aa198;
-    --green:   #859900;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: var(--base03);
@@ -44,7 +25,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 3px solid var(--blue);
+    border: 3px solid var(--base03);
 }
 
 h1 {
@@ -114,4 +95,78 @@ p {
 .material-icons {
     vertical-align: middle;
     margin-right: 10px;
+}
+
+.site-footer {
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid var(--base01);
+    font-size: 0.8rem;
+}
+
+.site-footer a {
+    color: var(--base00);
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.site-footer a:hover {
+    color: var(--blue);
+}
+
+.link-item.bio {
+    text-align: left;
+    padding: 4px 14px 10px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--base0);
+}
+
+.link-item.bio:hover {
+    background-color: var(--base02);
+}
+
+.link-item.bio p {
+    color: var(--base0);
+    margin: 12px 0;
+}
+
+.link-item.bio a {
+    display: inline;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.link-item.bio a:hover {
+    color: var(--cyan);
+    text-decoration: underline;
+}
+
+.link-item.bio code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    color: var(--base1);
+}
+
+.link-item.featured {
+    background-color: var(--base03);
+    border-left: 3px solid var(--cyan);
+}
+
+.link-item.featured a {
+    color: var(--base2);
+}
+
+.badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    background-color: var(--cyan);
+    color: var(--base03);
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    vertical-align: middle;
 }

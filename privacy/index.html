@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Force HTTPS: if loaded over http, immediately redirect to https before anything else loads.
+         Local development hosts are exempt so the site can be previewed over http://localhost. -->
+    <script>
+        if (location.protocol === 'http:' && !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+            location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+        }
+    </script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Adam Wanninger</title>
+    <meta name="description" content="Privacy Policy for awanninger.com and its associated applications.">
+    <link rel="canonical" href="https://awanninger.com/privacy">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/tokens.css">
+    <link rel="stylesheet" href="/legal.css">
+</head>
+<body>
+<div class="legal-wrap">
+<main class="legal">
+    <a class="back" href="/">&larr; Back to awanninger.com</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: September 10, 2026</p>
+
+    <p>This Privacy Policy describes how Adam Wanninger ("we", "us", or "our") collects, uses, and
+    discloses information when you visit <a href="https://awanninger.com">awanninger.com</a> or use any
+    application, site, or service that links to this policy (collectively, the "Services").</p>
+
+    <p>By using the Services, you agree to the collection and use of information in accordance with this
+    policy. If you do not agree with this policy, please do not use the Services.</p>
+
+    <h2>1. Projects Covered by This Policy</h2>
+    <p>This policy is the single privacy policy for all projects operated by Adam Wanninger, including
+    every application that uses awanninger.com as its Google OAuth domain. It currently covers:</p>
+    <ul>
+        <li><strong>awanninger.com</strong>, this personal landing page. It is a static site with no
+        sign-in. The only data collected is the analytics described below.</li>
+        <li><strong>cats-mcp</strong>, an MCP server providing live Charlotte Area Transit System bus and
+        rail data. Its hosted HTTP transport uses Google only to sign you in, requesting the
+        <code>openid</code> and <code>email</code> scopes and nothing else. Your email address is used to
+        identify your session and to check it against an access list. The server issues its own tokens
+        rather than passing Google's through, and the transit data it returns comes from public CATS
+        feeds, not from your Google account.</li>
+        <li><strong>Any other project</strong> operated by us that links to this policy or that names
+        awanninger.com as its OAuth domain.</li>
+    </ul>
+    <p>Where a project requests Google permissions beyond those listed above, the specific permissions are
+    shown to you on Google's consent screen before you grant access, and the practices described in
+    "Google User Data" below apply to all of them.</p>
+
+    <h2>2. Information We Collect</h2>
+    <p>We collect the following categories of information:</p>
+    <ul>
+        <li><strong>Information you provide directly.</strong> Information you submit when you contact us,
+        sign in, or otherwise interact with the Services. For example, your name, email address, and the
+        contents of any message you send us.</li>
+        <li><strong>Account information from third-party sign-in.</strong> If you choose to sign in using a
+        third-party identity provider such as Google, we receive the profile information that provider
+        shares with us, subject to the permissions you approve. See "Google User Data" below.</li>
+        <li><strong>Usage and device information.</strong> Information automatically collected when you use
+        the Services, such as IP address, browser type and version, operating system, referring page, pages
+        viewed, and the dates and times of your visits.</li>
+        <li><strong>Cookies and similar technologies.</strong> Small data files stored on your device that
+        help the Services function and help us understand how the Services are used.</li>
+    </ul>
+
+    <h2>3. How We Use Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+        <li>Provide, operate, maintain, and improve the Services;</li>
+        <li>Authenticate you and secure your account;</li>
+        <li>Respond to your inquiries, requests, and support messages;</li>
+        <li>Monitor and analyze usage, trends, and performance;</li>
+        <li>Detect, investigate, and prevent fraud, abuse, and security incidents; and</li>
+        <li>Comply with legal obligations and enforce our terms.</li>
+    </ul>
+    <p>We do not sell your personal information, and we do not use your personal information to serve
+    personalized or targeted advertising.</p>
+
+    <h2>4. Google User Data</h2>
+    <p>If you sign in with Google or connect a Google account, we request access only to the data necessary
+    to provide the features you have asked for. The specific permissions (scopes) are shown to you on
+    Google's consent screen before you grant access, and you may decline or later revoke them.</p>
+    <p>We use Google user data solely to provide and improve the user-facing features of the Services. We do
+    not transfer Google user data to third parties except as necessary to provide or improve those features,
+    to comply with applicable law, or as part of a merger, acquisition, or sale of assets with prior notice
+    to affected users. We do not use Google user data for advertising, and we do not allow humans to read
+    that data unless we have your affirmative consent, it is necessary for security purposes or to comply
+    with applicable law, or the data has been aggregated and anonymized.</p>
+    <p><strong>Limited Use disclosure.</strong> Our use and transfer of information received from Google
+    APIs adheres to the
+    <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+    API Services User Data Policy</a>, including its Limited Use requirements.</p>
+    <p>You can review and revoke the access you have granted at any time at
+    <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</p>
+
+    <h2>5. Cookies and Analytics</h2>
+    <p>This site uses Google Analytics, a web analytics service provided by Google LLC, to understand how
+    visitors use the site. Google Analytics uses cookies and similar identifiers to collect information such
+    as pages visited, time spent on the site, and approximate location derived from IP address. This
+    information is processed by Google in accordance with the
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+    <p>You may block cookies through your browser settings or opt out of Google Analytics using the
+    <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics
+    Opt-out Browser Add-on</a>. Blocking cookies may affect how parts of the Services function.</p>
+
+    <h2>6. How We Share Information</h2>
+    <p>We share information only in the following circumstances:</p>
+    <ul>
+        <li><strong>Service providers.</strong> With vendors who process data on our behalf, such as
+        hosting, analytics, and email providers, under obligations to protect that data and use it only for
+        the services they perform for us.</li>
+        <li><strong>Legal requirements.</strong> When required by applicable law, regulation, legal process,
+        or enforceable governmental request.</li>
+        <li><strong>Protection of rights.</strong> When we believe disclosure is reasonably necessary to
+        protect the rights, property, or safety of us, our users, or the public.</li>
+        <li><strong>Business transfers.</strong> In connection with a merger, acquisition, financing, or
+        sale of assets, with notice to affected users.</li>
+        <li><strong>With your consent.</strong> For any other purpose disclosed to you at the time we
+        collect the information.</li>
+    </ul>
+
+    <h2>7. Data Retention</h2>
+    <p>We retain personal information only for as long as necessary to fulfill the purposes described in
+    this policy, to comply with our legal obligations, to resolve disputes, and to enforce our agreements.
+    When information is no longer needed, we delete it or de-identify it.</p>
+
+    <h2>8. Security</h2>
+    <p>We use commercially reasonable administrative, technical, and physical safeguards designed to protect
+    the information we hold, including encryption in transit (HTTPS). No method of transmission or storage
+    is completely secure, however, and we cannot guarantee absolute security.</p>
+
+    <h2>9. Your Rights and Choices</h2>
+    <p>Depending on where you live, you may have the right to request access to, correction of, or deletion
+    of your personal information; to object to or restrict certain processing; to request a portable copy of
+    your data; and to withdraw consent at any time. You may also opt out of the sale or sharing of personal
+    information. As noted above, we do not sell or share personal information for
+    cross-context behavioral advertising.</p>
+    <p>To exercise any of these rights, contact us at
+    <a href="mailto:adam@awanninger.com">adam@awanninger.com</a>. We will respond within the time period
+    required by applicable law. We will not discriminate against you for exercising your rights.</p>
+
+    <h2>10. Children's Privacy</h2>
+    <p>The Services are not directed to children under 13 (or the minimum age required in your
+    jurisdiction), and we do not knowingly collect personal information from them. If you believe a child
+    has provided us personal information, contact us and we will delete it.</p>
+
+    <h2>11. International Users</h2>
+    <p>The Services are operated in the United States. If you access the Services from outside the United
+    States, you understand that your information may be transferred to, stored in, and processed in the
+    United States, where data protection laws may differ from those in your country.</p>
+
+    <h2>12. Third-Party Links</h2>
+    <p>The Services contain links to third-party websites and services that we do not control. This policy
+    does not apply to those sites, and we are not responsible for their content or privacy practices. We
+    encourage you to review the privacy policy of any site you visit.</p>
+
+    <h2>13. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated"
+    date at the top of this page. Material changes will be communicated by additional notice where required
+    by law. Your continued use of the Services after an update constitutes acceptance of the revised
+    policy.</p>
+
+    <h2>14. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or our handling of your information, contact:</p>
+    <p>Adam Wanninger<br>
+    Email: <a href="mailto:adam@awanninger.com">adam@awanninger.com</a><br>
+    Web: <a href="https://awanninger.com">https://awanninger.com</a></p>
+
+    <div class="legal-footer">
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/tos">Terms of Service</a>
+    </div>
+</main>
+</div>
+</body>
+</html>

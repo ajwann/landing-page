@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Force HTTPS: if loaded over http, immediately redirect to https before anything else loads -->
+    <!-- Force HTTPS: if loaded over http, immediately redirect to https before anything else loads.
+         Local development hosts are exempt so the site can be previewed over http://localhost. -->
     <script>
-        if (location.protocol === 'http:') {
+        if (location.protocol === 'http:' && !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
             location.replace('https://' + location.host + location.pathname + location.search + location.hash);
         }
     </script>
@@ -19,7 +20,12 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Landing Page</title>
+    <title>Adam Wanninger</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/tokens.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Structured context for LLMs / AI agents -->
@@ -30,8 +36,12 @@
     <div class="container">
         <img src="aw.png" alt="Profile Picture" class="profile-pic">
         <h1>Adam Wanninger</h1>
-        <p>Passionate product management leader, former developer</p>
+        <p>Passionate technology leader, former Rubyist, and occasional open source contributor</p>
         <div id="links"></div>
+        <footer class="site-footer">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/tos">Terms of Service</a>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>

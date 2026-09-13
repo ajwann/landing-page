@@ -1,5 +1,10 @@
 /* Solarized palette. Single source of truth for every page on the site:
-   link this first, then the page's own stylesheet. */
+   link this first, then the page's own stylesheet.
+
+   The sixteen values below never change — Solarized is one palette, and the
+   light and dark themes are the same colours assigned to different roles.
+   Stylesheets should use the semantic tokens further down rather than the raw
+   --baseNN values, so that a rule written once works in both themes. */
 :root {
     --base03:  #002b36;
     --base02:  #073642;
@@ -17,4 +22,46 @@
     --blue:    #268bd2;
     --cyan:    #2aa198;
     --green:   #859900;
+
+    /* Text that sits on an accent fill. These are deliberately fixed rather
+       than themed: the accents keep the same lightness in both themes, so the
+       text on top of them has to as well. */
+    --on-blue: var(--base3);
+    --on-cyan: var(--base03);
+
+    /* Tell the UA which themes we actually implement, so form controls,
+       scrollbars and the like are rendered to match. */
+    color-scheme: dark light;
+}
+
+/* Dark theme — the default, and what a browser that reports no colour-scheme
+   preference gets. Backgrounds run dark, content runs light. */
+:root {
+    --bg:           var(--base03);  /* page background */
+    --bg-alt:       var(--base02);  /* raised surfaces: cards, list rows */
+    --fg-dim:       var(--base01);  /* rules, disabled text, muted fills */
+    --fg-muted:     var(--base00);  /* de-emphasised body text */
+    --fg:           var(--base0);   /* body text */
+    --fg-strong:    var(--base1);   /* emphasised body text */
+    --fg-stronger:  var(--base2);   /* headings */
+    --fg-strongest: var(--base3);   /* highest-contrast text */
+    --shadow:       rgba(0, 0, 0, 0.3);
+}
+
+/* Light theme. Solarized's light mode is the exact mirror of its dark mode:
+   base03 swaps with base3, base02 with base2, and so on inward. Assigning the
+   tokens by that mirror is what keeps the two themes in step — every contrast
+   relationship in the dark theme is reproduced here by construction. */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg:           var(--base3);
+        --bg-alt:       var(--base2);
+        --fg-dim:       var(--base1);
+        --fg-muted:     var(--base0);
+        --fg:           var(--base00);
+        --fg-strong:    var(--base01);
+        --fg-stronger:  var(--base02);
+        --fg-strongest: var(--base03);
+        --shadow:       rgba(7, 54, 66, 0.15);
+    }
 }

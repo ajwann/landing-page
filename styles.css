@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--base03);
-    color: var(--base0);
+    background-color: var(--bg);
+    color: var(--fg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,10 +10,10 @@ body {
 }
 
 .container {
-    background-color: var(--base02);
+    background-color: var(--bg-alt);
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px var(--shadow);
     text-align: center;
     max-width: 400px;
     width: 100%;
@@ -25,16 +25,16 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 3px solid var(--base03);
+    border: 3px solid var(--bg);
 }
 
 h1 {
     margin: 0;
-    color: var(--base2);
+    color: var(--fg-stronger);
 }
 
 p {
-    color: var(--base1);
+    color: var(--fg-strong);
     margin-bottom: 20px;
 }
 
@@ -44,8 +44,8 @@ p {
 
 .link-button {
     display: block;
-    background-color: var(--base01);
-    color: var(--base2);
+    background-color: var(--fg-dim);
+    color: var(--fg-stronger);
     padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
@@ -56,7 +56,7 @@ p {
 
 .link-button:hover {
     background-color: var(--blue);
-    color: var(--base3);
+    color: var(--on-blue);
 }
 
 .link-list {
@@ -71,7 +71,7 @@ p {
 }
 
 .link-item {
-    background-color: var(--base02);
+    background-color: var(--bg-alt);
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
@@ -79,17 +79,17 @@ p {
 }
 
 .link-item:hover {
-    background-color: var(--base01);
+    background-color: var(--fg-dim);
 }
 
 .link-item a {
-    color: var(--base1);
+    color: var(--fg-strong);
     text-decoration: none;
     display: block;
 }
 
 .link-item a:hover {
-    color: var(--base3);
+    color: var(--fg-strongest);
 }
 
 .material-icons {
@@ -102,15 +102,15 @@ p {
     padding: 4px 14px 10px;
     font-size: 0.85rem;
     line-height: 1.6;
-    color: var(--base0);
+    color: var(--fg);
 }
 
 .link-item.bio:hover {
-    background-color: var(--base02);
+    background-color: var(--bg-alt);
 }
 
 .link-item.bio p {
-    color: var(--base0);
+    color: var(--fg);
     margin: 12px 0;
 }
 
@@ -128,16 +128,16 @@ p {
 .link-item.bio code {
     font-family: "SF Mono", Menlo, Consolas, monospace;
     font-size: 0.9em;
-    color: var(--base1);
+    color: var(--fg-strong);
 }
 
 .link-item.featured {
-    background-color: var(--base03);
+    background-color: var(--bg);
     border-left: 3px solid var(--cyan);
 }
 
 .link-item.featured a {
-    color: var(--base2);
+    color: var(--fg-stronger);
 }
 
 .badge {
@@ -146,7 +146,7 @@ p {
     padding: 1px 7px;
     border-radius: 10px;
     background-color: var(--cyan);
-    color: var(--base03);
+    color: var(--on-cyan);
     font-size: 0.65rem;
     font-weight: bold;
     letter-spacing: 0.5px;

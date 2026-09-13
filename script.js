@@ -23,7 +23,7 @@ const linkGroups = [
         name: "Open Source",
         icon: "commit",
         links: [
-            { name: "cats-mcp: an MCP server for live Charlotte Area Transit bus and rail data", url: "https://github.com/ajwann/cats-mcp", icon: "directions_bus", badge: "New" },
+            { name: "QueensCoach: an MCP server for live Charlotte Area Transit bus and rail data", url: "https://github.com/ajwann/queenscoach", icon: "directions_bus", badge: "New" },
             { name: "svg-loaders-react: React adaptation of the SVG Loaders library", url: "https://github.com/ajwann/svg-loaders-react", icon: "star" },
             { name: "RubyGems and Bundler: 18 commits, including a bundle bin path fix and a proper PathError", url: "https://github.com/ruby/rubygems/commits?author=ajwann", icon: "code" },
             { name: "ruby/ruby: a commit of mine in the Ruby language repo", url: "https://github.com/ruby/ruby/commit/aad7443e168880e382680d4c0be1757840b23c18", icon: "diamond" },

@@ -21,6 +21,7 @@ checked with the `curl` commands at the end of this file.
 | 5. Redirect Rule | Done. Rule in `http_request_dynamic_redirect`. |
 | 6. Enforce CSP | **Pending.** Due around 2026-11-07 if no `[Report Only]` violations show up. |
 | 7. Analytics | Decided: keep both GA and Cloudflare Web Analytics. The CSP allows both. |
+| 8. Markdown for agents | Done. URL Rewrite Rule serves `/index.md` for `/` when `Accept` contains `text/markdown`. ([§7](#7-markdown-for-agents)) |
 
 The rules match only `http.host eq "awanninger.com"`, so the `browse` and
 `cats` tunnel subdomains don't get the CSP or caching rules. HSTS is a zone-wide
@@ -222,11 +223,11 @@ CSS/JS/images get a 4-hour browser TTL from GitHub Pages.
 
 **Caching → Cache Rules → Create rule**
 
-**Rule 1: Edge-cache HTML and text**
+**Rule 1: Edge-cache HTML, text and Markdown**
 
 - Expression:
   ```
-  (http.host eq "awanninger.com" and (http.request.uri.path eq "/" or ends_with(http.request.uri.path, ".html") or ends_with(http.request.uri.path, ".txt") or ends_with(http.request.uri.path, ".xml")))
+  (http.host eq "awanninger.com" and (http.request.uri.path eq "/" or ends_with(http.request.uri.path, ".html") or ends_with(http.request.uri.path, ".txt") or ends_with(http.request.uri.path, ".xml") or ends_with(http.request.uri.path, ".md")))
   ```
 - Cache eligibility: **Eligible for cache**
 - Edge TTL: **Ignore cache-control header and use this TTL → 2 hours** (the Free plan minimum; 1 hour needs Pro)
@@ -268,6 +269,41 @@ removes the duplicate entirely.
   ```
 - Then: **Static**, URL `https://awanninger.com/`, status **301**,
   **Preserve query string** on.
+
+## 7. Markdown for agents
+
+Cloudflare's built-in **Markdown for Agents** (AI Crawl Control, setting
+`content_converter`) converts HTML to Markdown at the edge, but it needs a Pro
+or Business plan. On this Free zone the setting reports `editable: false`. The
+same result comes from a hand-written `/index.md` plus a URL rewrite:
+
+- `index.md` is the Markdown version of the page. GitHub Pages serves it as
+  `text/markdown; charset=utf-8`. It must **not** start with YAML front matter
+  (`---`), or Jekyll will render it to HTML and collide with `index.html`.
+  Keep it in step with `index.html` when the page changes.
+
+**Rules → Overview → Create rule → URL Rewrite Rule**
+
+- Rule name: `Markdown for agents`
+- Expression:
+  ```
+  (http.host eq "awanninger.com" and http.request.uri.path eq "/" and any(lower(http.request.headers["accept"][*])[*] contains "text/markdown"))
+  ```
+- Path: **Rewrite to → Static → `/index.md`**. Query: **Preserve**.
+
+Requests without `text/markdown` in `Accept`, which includes all browsers, get
+the HTML as before. The edge cache keys on the rewritten path, so the HTML and
+Markdown variants are cached separately. The cache rule in §5 also covers
+`.md`.
+
+**Response Header Transform Rule** `Vary on Accept for /` sets
+`Vary: Accept, Accept-Encoding` on `/`. Browsers and any shared caches outside
+Cloudflare then keep the two variants apart:
+
+- Expression: `(http.host eq "awanninger.com" and raw.http.request.uri.path eq "/")`
+
+If the zone moves to Pro, switch the built-in feature on instead and delete both
+rules and `index.md`.
 
 ---
 
@@ -337,6 +373,15 @@ curl -s https://awanninger.com/ | grep -c 'http-equiv="Content-Security-Policy"'
 Then load the page in a browser with DevTools open: no CSP errors in the
 console, and GA (Network → `collect`) and/or the Cloudflare beacon
 (`cloudflareinsights.com/cdn-cgi/rum`) requests succeed.
+
+**Markdown for agents**
+
+```sh
+curl -sI -H 'Accept: text/markdown' https://awanninger.com/ | grep -iE '^(HTTP|content-type|vary)'
+# expect: HTTP/2 200, content-type: text/markdown; charset=utf-8, vary: Accept, Accept-Encoding
+curl -sI https://awanninger.com/ | grep -i '^content-type'
+# expect: content-type: text/html; charset=utf-8
+```
 
 **Step 7: analytics (if you drop GA)**
 

@@ -22,6 +22,7 @@ checked with the `curl` commands at the end of this file.
 | 6. Enforce CSP | **Pending.** Due around 2026-11-07 if no `[Report Only]` violations show up. |
 | 7. Analytics | Decided: keep both GA and Cloudflare Web Analytics. The CSP allows both. |
 | 8. Markdown for agents | Done. URL Rewrite Rule serves `/index.md` for `/` when `Accept` contains `text/markdown`. ([§7](#7-markdown-for-agents)) |
+| 9. API catalog | Done. Rule `API catalog content type` sets `application/linkset+json` on `/.well-known/api-catalog`. ([§8](#8-api-catalog)) |
 
 The rules match only `http.host eq "awanninger.com"`, so the `browse` and
 `cats` tunnel subdomains don't get the CSP or caching rules. HSTS is a zone-wide
@@ -305,6 +306,23 @@ Cloudflare then keep the two variants apart:
 If the zone moves to Pro, switch the built-in feature on instead and delete both
 rules and `index.md`.
 
+## 8. API catalog
+
+`/.well-known/api-catalog` ([RFC 9727](https://www.rfc-editor.org/rfc/rfc9727))
+lets agents discover a site's APIs. This site has none, so the catalog is an
+empty linkset, `{"linkset": []}`. If you publish an API later, add an entry
+with an `anchor` and `service-desc` / `service-doc` links.
+
+Two pieces make it work on GitHub Pages:
+
+- `_config.yml` has `include: [".well-known"]`, because Jekyll skips
+  dot-directories by default.
+- GitHub Pages serves the extensionless file as `application/octet-stream`.
+  A third rule in the Response Header Transform ruleset fixes the type:
+  - Rule name: `API catalog content type`
+  - Expression: `(http.host eq "awanninger.com" and http.request.uri.path eq "/.well-known/api-catalog")`
+  - Set static `Content-Type` = `application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"`
+
 ---
 
 ## Verification checklist
@@ -381,6 +399,13 @@ curl -sI -H 'Accept: text/markdown' https://awanninger.com/ | grep -iE '^(HTTP|c
 # expect: HTTP/2 200, content-type: text/markdown; charset=utf-8, vary: Accept, Accept-Encoding
 curl -sI https://awanninger.com/ | grep -i '^content-type'
 # expect: content-type: text/html; charset=utf-8
+```
+
+**API catalog**
+
+```sh
+curl -sI https://awanninger.com/.well-known/api-catalog | grep -iE '^(HTTP|content-type)'
+# expect: HTTP/2 200 and content-type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
 ```
 
 **Step 7: analytics (if you drop GA)**

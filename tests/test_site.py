@@ -186,6 +186,17 @@ class TestMachineReadableFiles(unittest.TestCase):
         self.assertIn(f"Sitemap: {SITE}sitemap.xml", text)
         self.assertRegex(text, r"(?m)^Content-Signal: .*ai-train=(yes|no)")
 
+    def test_api_catalog(self):
+        # RFC 9727: an application/linkset+json document; the Content-Type
+        # comes from a Cloudflare response header rule.
+        catalog = json.loads((ROOT / ".well-known" / "api-catalog").read_text(encoding="utf-8"))
+        self.assertIsInstance(catalog["linkset"], list)
+
+    def test_jekyll_publishes_well_known(self):
+        # Jekyll skips dot-directories unless _config.yml includes them.
+        config = (ROOT / "_config.yml").read_text(encoding="utf-8")
+        self.assertRegex(config, r"(?m)^include:\n(\s+- .*\n)*\s+- \.well-known$")
+
     def test_sitemap(self):
         ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
         locs = [e.text for e in ET.parse(ROOT / "sitemap.xml").getroot().findall("s:url/s:loc", ns)]

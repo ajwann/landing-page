@@ -1,0 +1,4 @@
+# GitHub Pages runs Jekyll, which skips dot-directories by default.
+# Publish /.well-known/ (RFC 9727 API catalog); everything else stays default.
+include:
+  - .well-known

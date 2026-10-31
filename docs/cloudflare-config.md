@@ -7,6 +7,25 @@ Nothing in this file is applied automatically.
 Dashboard menu names move around between Cloudflare releases. If a path below
 doesn't match, search the dashboard for the rule type named in **bold**.
 
+## Status (2026-10-31)
+
+Steps 1–5 below were applied through the Cloudflare API with the `cf` CLI and
+checked with the `curl` commands at the end of this file.
+
+| Step | State |
+|---|---|
+| 1. Bot settings | Done. JavaScript Detections off (`enable_js: false`). Bot Fight Mode, Block AI bots and Cloudflare-managed robots.txt were already off. |
+| 2. Security headers | Done. Rule `Security headers` in `http_response_headers_transform`, CSP still **Report-Only**. |
+| 3. HSTS | Done. `max-age=31536000; includeSubDomains`, no preload. |
+| 4. Cache Rules | Done. Two rules in `http_request_cache_settings`. HTML edge TTL is **2 hours**, the Free plan minimum. |
+| 5. Redirect Rule | Done. Rule in `http_request_dynamic_redirect`. |
+| 6. Enforce CSP | **Pending.** Due around 2026-11-07 if no `[Report Only]` violations show up. |
+| 7. Analytics | Decided: keep both GA and Cloudflare Web Analytics. The CSP allows both. |
+
+The rules match only `http.host eq "awanninger.com"`, so the `browse` and
+`cats` tunnel subdomains don't get the CSP or caching rules. HSTS is a zone-wide
+setting and covers them; both serve valid HTTPS.
+
 ## Apply in this order
 
 1. **Turn off Bot Fight Mode / JavaScript Detections**, and make sure Block AI
@@ -210,10 +229,10 @@ CSS/JS/images get a 4-hour browser TTL from GitHub Pages.
   (http.host eq "awanninger.com" and (http.request.uri.path eq "/" or ends_with(http.request.uri.path, ".html") or ends_with(http.request.uri.path, ".txt") or ends_with(http.request.uri.path, ".xml")))
   ```
 - Cache eligibility: **Eligible for cache**
-- Edge TTL: **Ignore cache-control header and use this TTL → 1 hour**
+- Edge TTL: **Ignore cache-control header and use this TTL → 2 hours** (the Free plan minimum; 1 hour needs Pro)
 - Browser TTL: **Respect origin TTL** (GitHub Pages sends `max-age=600`)
 
-After each deploy, either wait up to an hour or run **Caching → Configuration →
+After each deploy, either wait up to two hours or run **Caching → Configuration →
 Purge Cache → Purge Everything**.
 
 **Rule 2: Longer browser TTL for images**

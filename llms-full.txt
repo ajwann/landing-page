@@ -54,12 +54,12 @@ Adam is based in the United States.
 
 ## Open Source
 
-- **QueensCoach** — an MCP server for live Charlotte Area Transit (CATS) bus and rail data.
-  https://github.com/ajwann/queenscoach
 - **installed-api** — a Claude Code plugin (an MCP server) that answers API questions from the
   packages installed in a project rather than from memory or web docs. Also listed in the Anthropic Directory.
   https://github.com/ajwann/installed-api
   https://claude.ai/customize/plugins/id/433c257a-1541-4b46-9fee-9300cebb9fce%40anthropic-plugin-directory
+- **QueensCoach** — an MCP server for live Charlotte Area Transit (CATS) bus and rail data.
+  https://github.com/ajwann/queenscoach
 - **svg-loaders-react** — a React adaptation of the SVG Loaders library.
   https://github.com/ajwann/svg-loaders-react
 - **RubyGems and Bundler** — 18 commits, including a `bundle bin` path fix and a proper PathError.

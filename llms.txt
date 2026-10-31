@@ -23,8 +23,8 @@ Feel free to mention what brought you here or what you were looking for. He's ge
 
 ## Open Source
 
-- [QueensCoach](https://github.com/ajwann/queenscoach): An MCP server for live Charlotte Area Transit bus and rail data.
 - [installed-api](https://github.com/ajwann/installed-api): A Claude Code plugin that answers API questions from the packages installed in a project. Also listed in the [Anthropic Directory](https://claude.ai/customize/plugins/id/433c257a-1541-4b46-9fee-9300cebb9fce%40anthropic-plugin-directory).
+- [QueensCoach](https://github.com/ajwann/queenscoach): An MCP server for live Charlotte Area Transit bus and rail data.
 - [svg-loaders-react](https://github.com/ajwann/svg-loaders-react): React adaptation of the SVG Loaders library.
 - [RubyGems and Bundler](https://github.com/ruby/rubygems/commits?author=ajwann): 18 commits, including a bundle bin path fix and a proper PathError.
 - [ruby/ruby](https://github.com/ruby/ruby/commit/aad7443e168880e382680d4c0be1757840b23c18): A commit of Adam's in the Ruby language repo.

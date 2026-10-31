@@ -23,6 +23,7 @@ checked with the `curl` commands at the end of this file.
 | 7. Analytics | Decided: keep both GA and Cloudflare Web Analytics. The CSP allows both. |
 | 8. Markdown for agents | Done. URL Rewrite Rule serves `/index.md` for `/` when `Accept` contains `text/markdown`. ([§7](#7-markdown-for-agents)) |
 | 9. API catalog | Done. Rule `API catalog content type` sets `application/linkset+json` on `/.well-known/api-catalog`. ([§8](#8-api-catalog)) |
+| 10. Email Address Obfuscation | Off (`email_obfuscation: off`). It rewrote the `mailto:` link to `/cdn-cgi/l/email-protection` and injected a decoder script, hiding the address from no-JS readers. The address is public in llms.txt and the JSON-LD anyway. |
 
 The rules match only `http.host eq "awanninger.com"`, so the `browse` and
 `cats` tunnel subdomains don't get the CSP or caching rules. HSTS is a zone-wide

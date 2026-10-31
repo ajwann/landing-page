@@ -17,6 +17,7 @@ I began my career as a proud member of the Ruby on Rails community, and it shape
 ## Open Source
 
 - [QueensCoach: an MCP server for live Charlotte Area Transit bus and rail data](https://github.com/ajwann/queenscoach) (new)
+- [installed-api: a Claude Code plugin that answers API questions from the packages installed in your project](https://github.com/ajwann/installed-api) (also listed in the [Anthropic Directory](https://claude.ai/customize/plugins/id/433c257a-1541-4b46-9fee-9300cebb9fce%40anthropic-plugin-directory))
 - [svg-loaders-react: React adaptation of the SVG Loaders library](https://github.com/ajwann/svg-loaders-react)
 - [RubyGems and Bundler: 18 commits, including a bundle bin path fix and a proper PathError](https://github.com/ruby/rubygems/commits?author=ajwann)
 - [ruby/ruby: a commit of mine in the Ruby language repo](https://github.com/ruby/ruby/commit/aad7443e168880e382680d4c0be1757840b23c18)

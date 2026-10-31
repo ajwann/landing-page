@@ -120,6 +120,17 @@ details.link-group:not([open]) > summary.link-button {
     color: var(--fg-strongest);
 }
 
+/* A secondary link under an item's main link, aligned past the icon. */
+.link-item a.also {
+    margin: 4px 0 0 34px;
+    font-size: 0.8rem;
+    color: var(--blue);
+}
+
+.link-item a.also:hover {
+    color: var(--cyan);
+}
+
 /* The <symbol> sprite at the top of index.html; it is referenced, never drawn. */
 .icon-sprite {
     display: none;

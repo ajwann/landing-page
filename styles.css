@@ -59,15 +59,39 @@ p {
     color: var(--on-blue);
 }
 
-.link-list {
+/* Each section is a native <details>; drop the disclosure triangle so the
+   <summary> looks like the plain button it replaced. */
+summary.link-button {
+    list-style: none;
+}
+
+summary.link-button::-webkit-details-marker {
     display: none;
+}
+
+/* <details> keeps the summary's bottom margin from collapsing into the
+   group's, as it did when the list was display:none. Zero it while closed so
+   the gap between sections stays at the group's 15px. */
+details.link-group:not([open]) > summary.link-button {
+    margin-bottom: 0;
+}
+
+/* The section titles are <h2>s for document outline, styled as button text. */
+.link-button h2 {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.link-button:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+}
+
+.link-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-.link-list.active {
-    display: block;
 }
 
 .link-item {
@@ -92,7 +116,17 @@ p {
     color: var(--fg-strongest);
 }
 
-.material-icons {
+/* The <symbol> sprite at the top of index.html; it is referenced, never drawn. */
+.icon-sprite {
+    display: none;
+}
+
+/* Inline SVG icons from the sprite in index.html, sized like the 24px
+   Material Icons font they replaced. */
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
     vertical-align: middle;
     margin-right: 10px;
 }

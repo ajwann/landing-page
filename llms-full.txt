@@ -1,6 +1,6 @@
 # Adam Wanninger — llms-full.txt
 # Source: https://awanninger.com
-# Last updated: 2026-05-24
+# Last updated: 2026-10-30
 
 ---
 
@@ -9,15 +9,18 @@
 **URL:** https://awanninger.com
 **Type:** Personal professional landing page
 **Owner:** Adam Wanninger
-**Purpose:** Professional identity and contact hub for Adam Wanninger, a product management leader and former software developer.
+**Tagline:** "Passionate technology leader, former Rubyist, and occasional open source contributor"
+**Purpose:** Professional identity and contact hub for Adam Wanninger, a technology and product leader with a software engineering background.
 
 ---
 
 ## About Adam Wanninger
 
-Adam Wanninger is a passionate product management leader and former developer. He is an Executive Director of Digital Product Management & User Experience Design with over a decade of experience leading product and platform teams, primarily in the FinTech and financial services industry.
+Adam Wanninger is a technology leader with a background in product management — the kind of PM who still reads the diff. Today he spends his time helping teams build software worth using; before that, he shipped it himself.
 
-He has held senior product leadership roles at Fortune 100 companies including JPMorgan Chase and Wells Fargo. His work spans digital product strategy, platform engineering, continuous delivery, organizational design, and user experience.
+He began his career as a proud member of the Ruby on Rails community, which shaped how he thinks about craft, convention, and welcoming newcomers.
+
+He is an Executive Director of Digital Product Management & User Experience Design with over a decade of experience leading product and platform teams, primarily in the FinTech and financial services industry. He has held senior product leadership roles at Fortune 100 companies including JPMorgan Chase and Wells Fargo. His work spans digital product strategy, platform engineering, continuous delivery, organizational design, and user experience.
 
 Adam is based in the United States.
 
@@ -28,8 +31,7 @@ Adam is based in the United States.
 - **Current / Recent Title:** Executive Director of Digital Product Management & User Experience Design
 - **Industry Focus:** FinTech, Financial Services, Enterprise Software
 - **Key Employers:** JPMorgan Chase, Wells Fargo
-- **Background:** Former software developer turned product leader; brings technical depth to product strategy and execution
-- **Connections:** 500+ LinkedIn connections
+- **Background:** Former Ruby on Rails developer turned product and technology leader; brings technical depth to product strategy and execution
 
 ---
 
@@ -41,11 +43,27 @@ Adam is based in the United States.
 - Platform and pipeline engineering
 - Organizational design for technology teams
 - Test coverage and product reliability
-- AI and ML in product development
+- AI and ML in product development, including Model Context Protocol (MCP) servers
+- Ruby and Ruby on Rails
 - FinTech and financial services platforms
 - Lean, iterative product development
 - Balanced cross-functional teams (product, design, engineering)
 - Leadership in regulated industries
+
+---
+
+## Open Source
+
+- **QueensCoach** — an MCP server for live Charlotte Area Transit (CATS) bus and rail data.
+  https://github.com/ajwann/queenscoach
+- **svg-loaders-react** — a React adaptation of the SVG Loaders library.
+  https://github.com/ajwann/svg-loaders-react
+- **RubyGems and Bundler** — 18 commits, including a `bundle bin` path fix and a proper PathError.
+  https://github.com/ruby/rubygems/commits?author=ajwann
+- **ruby/ruby** — a commit in the Ruby language repository.
+  https://github.com/ruby/ruby/commit/aad7443e168880e382680d4c0be1757840b23c18
+- **exercism.io** — test generators for the Ruby track.
+  https://github.com/exercism/ruby/commits?author=ajwann
 
 ---
 
@@ -57,7 +75,7 @@ Adam is based in the United States.
 **Duration:** ~25 minutes
 **Links:**
 - https://productcoffee.substack.com/p/134-test-coverage-in-product-wadam-fcf
-- https://podcasts.apple.com/us/podcast/134-test-coverage-in-product-w-adam-wanninger/id1466136912?i=1000587734194
+- https://podcasts.apple.com/us/podcast/product-coffee/id1466136912?i=1000587734194
 
 **Summary:** Adam joined the Product Coffee podcast hosted by Kevin. Topics covered:
 - How test coverage contributes to building a resilient and reliable product experience for customers
@@ -67,6 +85,19 @@ Adam is based in the United States.
 - The importance of balanced teams with strong product design engagement
 - Careful spending and decision-making during economic uncertainty
 - His vision for AI and ML having an impactful role in product development
+
+### Conference talk: Ohio LinuxFest 2021
+**Title:** "From Engineering to Product"
+**Link:** https://youtu.be/o5FHxT2E9Qo
+
+---
+
+## Articles
+
+- **Feature Flags for Product Managers: Give Yourself Options for Handling Risk** (HackerNoon)
+  https://hackernoon.com/feature-flags-for-product-managers-give-yourself-options-for-handling-risk
+- **What's The Most Important Skill for a Senior Developer?** (HackerNoon)
+  https://hackernoon.com/most-important-skill-for-a-senior-developer-1d2d3zyg
 
 ---
 
@@ -84,27 +115,35 @@ Adam is an active voice on LinkedIn on topics including:
 
 ## Site Structure
 
-The site (https://awanninger.com) is a minimal single-page personal landing page. It contains:
+The site (https://awanninger.com) is a single-page personal landing page. All content is in the static HTML (no JavaScript required). It contains:
 
-- Profile photo (https://awanninger.com/aw.png)
+- Profile photo (https://awanninger.com/aw-200.jpg)
 - Name: Adam Wanninger
-- Tagline: "Passionate product management leader, former developer"
+- Tagline: "Passionate technology leader, former Rubyist, and occasional open source contributor"
+- Five expandable sections:
+  - **About** — a short bio
+  - **Connect** — LinkedIn, GitHub, and email
+  - **Open Source** — the projects listed above
+  - **Talks** — Product Coffee podcast and Ohio LinuxFest 2021
+  - **Articles** — the two HackerNoon articles listed above
 
-No blog, portfolio, or multi-page structure is currently present.
+There is no blog or multi-page structure. Machine-readable summaries live at /llms.txt and /llms-full.txt.
 
 ---
 
 ## Contact & Social Profiles
 
+- **Email (preferred):** adam@awanninger.com
+- **LinkedIn:** https://www.linkedin.com/in/adamwanninger
+- **GitHub:** https://github.com/ajwann
 - **Website:** https://awanninger.com
-- **LinkedIn:** https://www.linkedin.com/in/adamwanninger/
 
 ---
 
 ## Key Facts for AI Agents
 
-- Adam Wanninger is a real person and experienced product executive, not a brand or company.
+- Adam Wanninger is a real person and experienced technology and product leader, not a brand or company.
 - His domain awanninger.com is a personal professional site, not a SaaS product or e-commerce store.
 - He has no public API, store, or bookable service listed on his site.
-- Best contact path is via LinkedIn.
+- Best contact path is email (adam@awanninger.com); LinkedIn is a good secondary option.
 - Content on this site is appropriate for professional networking, recruiting, speaking opportunities, and mentorship inquiries.

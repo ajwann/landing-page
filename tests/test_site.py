@@ -175,6 +175,11 @@ class TestMachineReadableFiles(unittest.TestCase):
         # Front matter would make Jekyll render index.md to HTML over index.html.
         self.assertFalse((ROOT / "index.md").read_text(encoding="utf-8").startswith("---"))
 
+    def test_auth_md(self):
+        text = (ROOT / "auth.md").read_text(encoding="utf-8")
+        # An H1 containing "auth.md"; no front matter, or Jekyll would render it.
+        self.assertRegex(text.splitlines()[0], r"^# .*auth\.md")
+
     def test_llms_txt_has_every_link(self):
         text = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for url in self.links:

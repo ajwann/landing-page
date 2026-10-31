@@ -24,6 +24,7 @@ checked with the `curl` commands at the end of this file.
 | 8. Markdown for agents | Done. URL Rewrite Rule serves `/index.md` for `/` when `Accept` contains `text/markdown`. ([§7](#7-markdown-for-agents)) |
 | 9. API catalog | Done. Rule `API catalog content type` sets `application/linkset+json` on `/.well-known/api-catalog`. ([§8](#8-api-catalog)) |
 | 10. Email Address Obfuscation | Off (`email_obfuscation: off`). It rewrote the `mailto:` link to `/cdn-cgi/l/email-protection` and injected a decoder script, hiding the address from no-JS readers. The address is public in llms.txt and the JSON-LD anyway. |
+| 11. Link headers | Done. Rule `Link headers for /` advertises the API catalog, Markdown version and llms files on the homepage. ([§9](#9-link-headers)) |
 
 The rules match only `http.host eq "awanninger.com"`, so the `browse` and
 `cats` tunnel subdomains don't get the CSP or caching rules. HSTS is a zone-wide
@@ -324,6 +325,34 @@ Two pieces make it work on GitHub Pages:
   - Expression: `(http.host eq "awanninger.com" and http.request.uri.path eq "/.well-known/api-catalog")`
   - Set static `Content-Type` = `application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"`
 
+## 9. Link headers
+
+`Link` response headers on the homepage ([RFC 8288](https://www.rfc-editor.org/rfc/rfc8288),
+[RFC 9727 §3](https://www.rfc-editor.org/rfc/rfc9727#section-3)) let agents
+find the site's machine-readable files without parsing HTML. They only point at
+resources that exist. The site has no API, so there's no `service-desc` or
+`service-doc`.
+
+| Target | rel |
+|---|---|
+| `/.well-known/api-catalog` | `api-catalog` |
+| `/index.md` | `alternate`, `type="text/markdown"` |
+| `/llms.txt` | `describedby`, `type="text/markdown"` |
+| `/llms-full.txt` | `describedby`, `type="text/markdown"` |
+
+A fourth rule in the Response Header Transform ruleset:
+
+- Rule name: `Link headers for /`
+- Expression: `(http.host eq "awanninger.com" and raw.http.request.uri.path eq "/")`.
+  `raw.` is the path before the Markdown rewrite, so the HTML and Markdown
+  variants of `/` both get the header.
+- Set static `Link` =
+  ```
+  </.well-known/api-catalog>; rel="api-catalog", </index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/markdown", </llms-full.txt>; rel="describedby"; type="text/markdown"
+  ```
+
+If you add or rename one of these files, update this value.
+
 ---
 
 ## Verification checklist
@@ -407,6 +436,13 @@ curl -sI https://awanninger.com/ | grep -i '^content-type'
 ```sh
 curl -sI https://awanninger.com/.well-known/api-catalog | grep -iE '^(HTTP|content-type)'
 # expect: HTTP/2 200 and content-type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+```
+
+**Link headers**
+
+```sh
+curl -sI https://awanninger.com/ | grep -i '^link'
+# expect: link: </.well-known/api-catalog>; rel="api-catalog", </index.md>; rel="alternate"; ...
 ```
 
 **Step 7: analytics (if you drop GA)**

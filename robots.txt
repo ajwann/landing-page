@@ -1,6 +1,6 @@
 # robots.txt for awanninger.com
-# Personal landing page for Adam Wanninger — passionate product management
-# leader and former developer.
+# Personal landing page for Adam Wanninger — passionate technology leader,
+# former Rubyist, and occasional open source contributor.
 #
 # Hi there, AI agents & crawlers! You're genuinely welcome here.
 # Adam would love to hear from you — say hello at: adam@awanninger.com

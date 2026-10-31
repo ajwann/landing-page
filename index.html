@@ -1,26 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Force HTTPS: if loaded over http, immediately redirect to https before anything else loads.
-         Local development hosts are exempt so the site can be previewed over http://localhost. -->
-    <script>
-        if (location.protocol === 'http:' && !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
-            location.replace('https://' + location.host + location.pathname + location.search + location.hash);
-        }
-    </script>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CHWXMVCVD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-    
-        gtag('config', 'G-5CHWXMVCVD');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Wanninger</title>
+    <title>Adam Wanninger — Technology &amp; Product Leader</title>
+    <meta name="description" content="Adam Wanninger is a technology and product leader who still reads the diff, with roots in Ruby on Rails and a habit of contributing to open source projects.">
+    <link rel="canonical" href="https://awanninger.com/">
+    <!-- Upgrade any stray http:// subresource. Cloudflare already 301s http->https
+         for the page itself; this goes once the CSP response header is live. -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <!-- Link previews -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Adam Wanninger">
+    <meta property="og:title" content="Adam Wanninger — Technology &amp; Product Leader">
+    <meta property="og:description" content="Adam Wanninger is a technology and product leader who still reads the diff, with roots in Ruby on Rails and a habit of contributing to open source projects.">
+    <meta property="og:url" content="https://awanninger.com/">
+    <meta property="og:image" content="https://awanninger.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Adam Wanninger, Technology &amp; Product Leader">
+    <meta property="profile:first_name" content="Adam">
+    <meta property="profile:last_name" content="Wanninger">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Adam Wanninger — Technology &amp; Product Leader">
+    <meta name="twitter:description" content="Adam Wanninger is a technology and product leader who still reads the diff, with roots in Ruby on Rails and a habit of contributing to open source projects.">
+    <meta name="twitter:image" content="https://awanninger.com/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://awanninger.com/#person",
+                "name": "Adam Wanninger",
+                "givenName": "Adam",
+                "familyName": "Wanninger",
+                "url": "https://awanninger.com/",
+                "image": "https://awanninger.com/aw-200.jpg",
+                "jobTitle": "Technology & Product Leader",
+                "description": "Passionate technology leader, former Rubyist, and occasional open source contributor.",
+                "email": "mailto:adam@awanninger.com",
+                "sameAs": [
+                    "https://www.linkedin.com/in/adamwanninger",
+                    "https://github.com/ajwann"
+                ],
+                "knowsAbout": [
+                    "Product management",
+                    "Ruby",
+                    "Ruby on Rails",
+                    "Model Context Protocol (MCP)",
+                    "Continuous delivery"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://awanninger.com/#website",
+                "url": "https://awanninger.com/",
+                "name": "Adam Wanninger",
+                "inLanguage": "en",
+                "publisher": { "@id": "https://awanninger.com/#person" }
+            }
+        ]
+    }
+    </script>
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
@@ -30,19 +75,90 @@
     <meta name="theme-color" content="#002b36" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#fdf6e3" media="(prefers-color-scheme: light)">
     <link rel="stylesheet" href="/tokens.css">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
     <!-- Structured context for LLMs / AI agents -->
     <link rel="alternate" type="text/markdown" title="llms.txt" href="/llms.txt">
     <link rel="alternate" type="text/markdown" title="llms-full.txt" href="/llms-full.txt">
+
+    <!-- Google tag (gtag.js); the config call lives in /analytics.js so no inline script is needed -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CHWXMVCVD"></script>
+    <script defer src="/analytics.js"></script>
 </head>
 <body>
-    <div class="container">
-        <img src="aw.png" alt="Profile Picture" class="profile-pic">
+    <!-- Material Icons (Apache-2.0), only the ones this page uses -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true">
+        <symbol id="i-person" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></symbol>
+        <symbol id="i-share" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></symbol>
+        <symbol id="i-commit" viewBox="0 0 24 24"><path d="M16.9,11L16.9,11c-0.46-2.28-2.48-4-4.9-4s-4.44,1.72-4.9,4h0H2v2h5.1h0c0.46,2.28,2.48,4,4.9,4s4.44-1.72,4.9-4h0H22v-2 H16.9z M12,15c-1.66,0-3-1.34-3-3s1.34-3,3-3s3,1.34,3,3S13.66,15,12,15z"/></symbol>
+        <symbol id="i-record-voice-over" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4"/><path d="M9 15c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7.76-9.64l-1.68 1.69c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14z"/></symbol>
+        <symbol id="i-edit-note" viewBox="0 0 24 24"><path d="M3,10h11v2H3V10z M3,8h11V6H3V8z M3,16h7v-2H3V16z M18.01,12.87l0.71-0.71c0.39-0.39,1.02-0.39,1.41,0l0.71,0.71 c0.39,0.39,0.39,1.02,0,1.41l-0.71,0.71L18.01,12.87z M17.3,13.58l-5.3,5.3V21h2.12l5.3-5.3L17.3,13.58z"/></symbol>
+        <symbol id="i-business" viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></symbol>
+        <symbol id="i-email" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+        <symbol id="i-directions-bus" viewBox="0 0 24 24"><path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></symbol>
+        <symbol id="i-diamond" viewBox="0 0 24 24"><polygon points="12.16,3 11.84,3 9.21,8.25 14.79,8.25"/><polygon points="16.46,8.25 21.62,8.25 19,3 13.84,3"/><polygon points="21.38,9.75 12.75,9.75 12.75,20.1"/><polygon points="11.25,20.1 11.25,9.75 2.62,9.75"/><polygon points="7.54,8.25 10.16,3 5,3 2.38,8.25"/></symbol>
+        <symbol id="i-school" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></symbol>
+        <symbol id="i-campaign" viewBox="0 0 24 24"><path d="M18 11v2h4v-2h-4zm-2 6.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.4-.4.54-.8 1.08-1.2 1.61zM20.4 5.6c-.4-.53-.8-1.07-1.2-1.6-.99.74-2.24 1.68-3.2 2.4.4.53.8 1.07 1.2 1.6.96-.72 2.21-1.65 3.2-2.4zM4 9c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v4h2v-4h1l5 3V6L8 9H4zm11.5 3c0-1.33-.58-2.53-1.5-3.35v6.69c.92-.81 1.5-2.01 1.5-3.34z"/></symbol>
+        <symbol id="i-notes" viewBox="0 0 24 24"><path d="M3 18h12v-2H3v2zM3 6v2h18V6H3zm0 7h18v-2H3v2z"/></symbol>
+    </svg>
+
+    <main class="container">
+        <picture>
+            <source type="image/webp" srcset="/aw-200.webp">
+            <img src="/aw-200.jpg" alt="Adam Wanninger" class="profile-pic" width="100" height="100" fetchpriority="high">
+        </picture>
         <h1>Adam Wanninger</h1>
         <p>Passionate technology leader, former Rubyist, and occasional open source contributor</p>
-        <div id="links"></div>
-    </div>
-    <script src="script.js"></script>
+
+        <details class="link-group">
+            <summary class="link-button"><h2><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-person"/></svg>About</h2></summary>
+            <ul class="link-list">
+                <li class="link-item bio">
+                    <p>I'm a technology leader with a background in product management, the kind of PM who
+                    still reads the diff. Today I spend my time helping teams build software worth using; before
+                    that, I shipped it myself.</p>
+                    <p>I began my career as a proud member of the Ruby on Rails community, and it shaped how I
+                    think about craft, convention, and welcoming newcomers.</p>
+                </li>
+            </ul>
+        </details>
+
+        <details class="link-group">
+            <summary class="link-button"><h2><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-share"/></svg>Connect</h2></summary>
+            <ul class="link-list">
+                <li class="link-item"><a href="https://www.linkedin.com/in/adamwanninger" target="_blank" rel="me noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-business"/></svg>LinkedIn</a></li>
+                <li class="link-item"><a href="https://github.com/ajwann" target="_blank" rel="me noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-code"/></svg>GitHub</a></li>
+                <li class="link-item"><a href="mailto:adam@awanninger.com"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-email"/></svg>Email</a></li>
+            </ul>
+        </details>
+
+        <details class="link-group">
+            <summary class="link-button"><h2><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-commit"/></svg>Open Source</h2></summary>
+            <ul class="link-list">
+                <li class="link-item featured"><a href="https://github.com/ajwann/queenscoach" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-directions-bus"/></svg>QueensCoach: an MCP server for live Charlotte Area Transit bus and rail data<span class="badge">New</span></a></li>
+                <li class="link-item"><a href="https://github.com/ajwann/svg-loaders-react" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-star"/></svg>svg-loaders-react: React adaptation of the SVG Loaders library</a></li>
+                <li class="link-item"><a href="https://github.com/ruby/rubygems/commits?author=ajwann" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-code"/></svg>RubyGems and Bundler: 18 commits, including a bundle bin path fix and a proper PathError</a></li>
+                <li class="link-item"><a href="https://github.com/ruby/ruby/commit/aad7443e168880e382680d4c0be1757840b23c18" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-diamond"/></svg>ruby/ruby: a commit of mine in the Ruby language repo</a></li>
+                <li class="link-item"><a href="https://github.com/exercism/ruby/commits?author=ajwann" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-school"/></svg>exercism.io: test generators for the Ruby track</a></li>
+            </ul>
+        </details>
+
+        <details class="link-group">
+            <summary class="link-button"><h2><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-record-voice-over"/></svg>Talks</h2></summary>
+            <ul class="link-list">
+                <li class="link-item"><a href="https://podcasts.apple.com/us/podcast/product-coffee/id1466136912?i=1000587734194" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-campaign"/></svg>Product Coffee podcast, Ep. 134: Test Coverage in Product (2022)</a></li>
+                <li class="link-item"><a href="https://youtu.be/o5FHxT2E9Qo" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-campaign"/></svg>Ohio LinuxFest 2021: From Engineering to Product</a></li>
+            </ul>
+        </details>
+
+        <details class="link-group">
+            <summary class="link-button"><h2><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-edit-note"/></svg>Articles</h2></summary>
+            <ul class="link-list">
+                <li class="link-item"><a href="https://hackernoon.com/feature-flags-for-product-managers-give-yourself-options-for-handling-risk" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-notes"/></svg>Feature Flags for Product Managers: Give Yourself Options for Handling Risk</a></li>
+                <li class="link-item"><a href="https://hackernoon.com/most-important-skill-for-a-senior-developer-1d2d3zyg" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-notes"/></svg>What's The Most Important Skill for a Senior Developer?</a></li>
+            </ul>
+        </details>
+    </main>
 </body>
 </html>

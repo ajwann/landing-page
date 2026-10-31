@@ -45,7 +45,9 @@ p {
 .link-button {
     display: block;
     background-color: var(--fg-dim);
-    color: var(--fg-stronger);
+    /* fg-strongest, not fg-stronger: base2 on base01 is 4.39:1, under WCAG AA;
+       base3 on base01 is 4.99:1 (and base03 on base1 is 5.61:1 in light). */
+    color: var(--fg-strongest);
     padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
@@ -54,9 +56,11 @@ p {
     cursor: pointer;
 }
 
+/* Cyan, not blue: no Solarized text colour reaches WCAG AA on blue (base3 is
+   3.41:1, base03 4.08:1), while base03 on cyan is 4.75:1. */
 .link-button:hover {
-    background-color: var(--blue);
-    color: var(--on-blue);
+    background-color: var(--cyan);
+    color: var(--on-cyan);
 }
 
 /* Each section is a native <details>; drop the disclosure triangle so the

@@ -202,6 +202,15 @@ class TestMachineReadableFiles(unittest.TestCase):
         config = (ROOT / "_config.yml").read_text(encoding="utf-8")
         self.assertRegex(config, r"(?m)^include:\n(\s+- .*\n)*\s+- \.well-known$")
 
+    def test_analytics_tracks_sections_and_links(self):
+        js = (ROOT / "analytics.js").read_text(encoding="utf-8")
+        self.assertIn("'section_toggle'", js)
+        self.assertIn("'link_click'", js)
+        # The selectors the listeners rely on must still exist in the page.
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<details class="link-group">', html)
+        self.assertIn('class="link-list"', html)
+
     def test_sitemap(self):
         ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
         locs = [e.text for e in ET.parse(ROOT / "sitemap.xml").getroot().findall("s:url/s:loc", ns)]

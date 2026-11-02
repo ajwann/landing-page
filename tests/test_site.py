@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://awanninger.com/"
-HTML_PAGES = ["index.html", "404.html"]
+HTML_PAGES = ["index.html", "404.html", "privacy.html"]
 
 
 class Page(HTMLParser):
@@ -210,6 +210,14 @@ class TestMachineReadableFiles(unittest.TestCase):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('<details class="link-group">', html)
         self.assertIn('class="link-list"', html)
+
+    def test_privacy_notice(self):
+        # Google Analytics' terms require disclosing GA and its cookies.
+        hrefs = [a.get("href") for a in parse("index.html").find("a")]
+        self.assertIn("/privacy.html", hrefs)
+        text = (ROOT / "privacy.html").read_text(encoding="utf-8")
+        self.assertIn("Google Analytics", text)
+        self.assertIn("_ga", text)
 
     def test_sitemap(self):
         ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}

@@ -14,6 +14,7 @@ Feel free to mention what brought you here or what you were looking for. He's ge
 - [Home](https://awanninger.com/): Personal landing page with bio, profile photo, and links.
 - [Full detail](https://awanninger.com/llms-full.txt): Longer background, talks, open source work, and contact guidance.
 - [auth.md](https://awanninger.com/auth.md): How agents access this site: no authentication needed.
+- [Privacy](https://awanninger.com/privacy.html): What the site collects with Google Analytics and how to opt out.
 
 ## Connect
 

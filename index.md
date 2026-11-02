@@ -35,4 +35,6 @@ I began my career as a proud member of the Ruby on Rails community, and it shape
 
 ---
 
+Privacy: this site uses Google Analytics; see [privacy.html](https://awanninger.com/privacy.html).
+
 More context for AI agents: [llms.txt](https://awanninger.com/llms.txt) and [llms-full.txt](https://awanninger.com/llms-full.txt).

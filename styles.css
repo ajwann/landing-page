@@ -205,3 +205,56 @@ details.link-group:not([open]) > summary.link-button {
     text-transform: uppercase;
     vertical-align: middle;
 }
+
+.site-footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.site-footer a,
+.prose a:not(.link-button) {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+.prose a:not(.link-button):hover {
+    color: var(--cyan);
+    text-decoration: underline;
+}
+
+.container.prose {
+    max-width: 560px;
+    margin: 20px 16px;
+    text-align: left;
+}
+
+.prose h2 {
+    margin: 24px 0 8px;
+    font-size: 1.1rem;
+    color: var(--fg-stronger);
+}
+
+.prose p {
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+
+.prose code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9em;
+}
+
+.prose .updated {
+    margin-top: 24px;
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+}
+
+.prose h1 {
+    margin-bottom: 12px;
+}
+
+.prose .link-button {
+    text-align: center;
+}
